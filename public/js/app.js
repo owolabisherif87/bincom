@@ -22072,15 +22072,6 @@ window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-window.axios.interceptors.response.use(function (response) {
-  return response.data;
-}, function (error) {
-  if (error.response && 419 === error.response.status) {
-    window.location.reload();
-  }
-
-  return Promise.reject(error);
-});
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting
