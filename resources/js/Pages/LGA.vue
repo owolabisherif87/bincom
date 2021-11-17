@@ -60,6 +60,7 @@ export default {
 
         const selectLga = () => {
             if (lgaId.value === "") return;
+            window.location.reload();
 
             axios
                 .get(
