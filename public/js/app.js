@@ -19604,7 +19604,8 @@ __webpack_require__.r(__webpack_exports__);
       if (form.value.unitId === "" || form.value.party_abbreviation === "" || form.value.party_score === 0 || form.value.user === "") {
         msg.value = "All fields are required";
         return;
-      }
+      } // Changed from route()
+
 
       axios__WEBPACK_IMPORTED_MODULE_2___default().post("https://shrouded-everglades-39975.herokuapp.com/store", JSON.parse(JSON.stringify(form.value))).then(function (_) {
         msg.value = "Result was added successfully!";
