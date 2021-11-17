@@ -19568,11 +19568,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
-/* harmony import */ var _vue_runtime_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @vue/runtime-core */ "./node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js");
+/* harmony import */ var _vue_runtime_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @vue/runtime-core */ "./node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js");
 /* harmony import */ var _Components_Header_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Components/Header.vue */ "./resources/js/Components/Header.vue");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 
 
- // import axios from "axios";
+
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -19581,17 +19583,17 @@ __webpack_require__.r(__webpack_exports__);
     Link: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.Link
   },
   setup: function setup() {
-    var form = (0,_vue_runtime_core__WEBPACK_IMPORTED_MODULE_2__.ref)({
+    var form = (0,_vue_runtime_core__WEBPACK_IMPORTED_MODULE_3__.ref)({
       unitId: "",
       party_abbreviation: "",
       party_score: 0,
       user: ""
     });
-    var units = (0,_vue_runtime_core__WEBPACK_IMPORTED_MODULE_2__.ref)([]);
-    var msg = (0,_vue_runtime_core__WEBPACK_IMPORTED_MODULE_2__.ref)("");
+    var units = (0,_vue_runtime_core__WEBPACK_IMPORTED_MODULE_3__.ref)([]);
+    var msg = (0,_vue_runtime_core__WEBPACK_IMPORTED_MODULE_3__.ref)("");
 
     var getUnits = function getUnits() {
-      axios.get(route("all-units")).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_2___default().get(route("all-units")).then(function (res) {
         units.value = res.data;
       })["catch"](function (err) {
         console.log(err.message.toString());
@@ -19604,7 +19606,7 @@ __webpack_require__.r(__webpack_exports__);
         return;
       }
 
-      axios.post(route("store"), JSON.parse(JSON.stringify(form.value))).then(function (_) {
+      axios__WEBPACK_IMPORTED_MODULE_2___default().post(route("store"), JSON.parse(JSON.stringify(form.value))).then(function (_) {
         msg.value = "Result was added successfully!";
         form.value.unitId = "";
         form.value.party_abbreviation = "";
@@ -47718,6 +47720,18 @@ module.exports = JSON.parse('{"_from":"axios@^0.21","_id":"axios@0.21.4","_inBun
 /******/ 				}
 /******/ 			}
 /******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
 /******/ 		};
 /******/ 	})();
 /******/ 	

@@ -74,7 +74,7 @@
 import { Head, Link } from "@inertiajs/inertia-vue3";
 import { onMounted, ref } from "@vue/runtime-core";
 import Header from "@/Components/Header.vue";
-// import axios from "axios";
+import axios from "axios";
 
 export default {
     components: {
