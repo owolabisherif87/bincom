@@ -114,6 +114,8 @@ export default {
                 return;
             }
 
+            window.location.reload();
+
             axios
                 .post(route("store"), JSON.parse(JSON.stringify(form.value)))
                 .then((_) => {
