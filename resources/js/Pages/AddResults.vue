@@ -115,13 +115,11 @@ export default {
                 return;
             }
 
-            axios.create({
-                "X-CSRF-TOKEN": window.Laravel.csrfToken,
-                "X-Requested-With": "XMLHttpRequest",
-            });
-
             axios
-                .post(route("store"), JSON.parse(JSON.stringify(form.value)))
+                .post(
+                    "https://shrouded-everglades-39975.herokuapp.com/store",
+                    JSON.parse(JSON.stringify(form.value))
+                )
                 .then((_) => {
                     msg.value = "Result was added successfully!";
 

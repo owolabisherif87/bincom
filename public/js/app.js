@@ -19606,11 +19606,7 @@ __webpack_require__.r(__webpack_exports__);
         return;
       }
 
-      axios__WEBPACK_IMPORTED_MODULE_2___default().create({
-        "X-CSRF-TOKEN": window.Laravel.csrfToken,
-        "X-Requested-With": "XMLHttpRequest"
-      });
-      axios__WEBPACK_IMPORTED_MODULE_2___default().post(route("store"), JSON.parse(JSON.stringify(form.value))).then(function (_) {
+      axios__WEBPACK_IMPORTED_MODULE_2___default().post("https://shrouded-everglades-39975.herokuapp.com/store", JSON.parse(JSON.stringify(form.value))).then(function (_) {
         msg.value = "Result was added successfully!";
         form.value.unitId = "";
         form.value.party_abbreviation = "";
