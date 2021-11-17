@@ -20023,7 +20023,8 @@ __webpack_require__.r(__webpack_exports__);
 
     var selectLga = function selectLga() {
       if (lgaId.value === "") return;
-      axios.get(route("lga-results", lgaId.value)).then(function (res) {
+      axios.get("https://shrouded-everglades-39975.herokuapp.com/lga-results/".concat(lgaId.value)) // .get(route("lga-results", lgaId.value))
+      .then(function (res) {
         result.value = res.data;
       })["catch"](function (err) {
         console.log(err.message.toString());

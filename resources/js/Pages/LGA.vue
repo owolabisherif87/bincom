@@ -62,7 +62,10 @@ export default {
             if (lgaId.value === "") return;
 
             axios
-                .get(route("lga-results", lgaId.value))
+                .get(
+                    `https://shrouded-everglades-39975.herokuapp.com/lga-results/${lgaId.value}`
+                )
+                // .get(route("lga-results", lgaId.value))
                 .then((res) => {
                     result.value = res.data;
                 })
