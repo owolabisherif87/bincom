@@ -74,6 +74,7 @@
 import { Head, Link } from "@inertiajs/inertia-vue3";
 import { onMounted, ref } from "@vue/runtime-core";
 import Header from "@/Components/Header.vue";
+import axios from "axios";
 
 export default {
     components: {
@@ -114,7 +115,10 @@ export default {
                 return;
             }
 
-            window.location.reload();
+            axios.create({
+                "X-CSRF-TOKEN": window.Laravel.csrfToken,
+                "X-Requested-With": "XMLHttpRequest",
+            });
 
             axios
                 .post(route("store"), JSON.parse(JSON.stringify(form.value)))
